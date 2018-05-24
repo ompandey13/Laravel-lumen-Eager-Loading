@@ -11,9 +11,31 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'author_id' => function () {
+            return factory(App\Models\Author::class)->create()->id;
+        },
+        'body' => $faker->paragraphs(rand(3,10), true),
+    ];
+});
+
+$factory->define(App\Models\Author::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'email' => $faker->email,
+        'bio' => $faker->paragraph,
+    ];
+});
+
+$factory->define(App\Models\Profile::class, function (Faker\Generator $faker) {
+    return [
+        'birthday' => $faker->dateTimeBetween('-100 years', '-18 years'),
+        'author_id' => function () {
+            return factory(App\Models\Author::class)->create()->id;
+        },
+        'city' => $faker->city,
+        'state' => $faker->state,
+        'website' => $faker->domainName,
     ];
 });

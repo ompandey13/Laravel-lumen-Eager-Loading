@@ -1,21 +1,21 @@
 # Lumen PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+# Laravel-lumen-Eager-Loading
+Laravel-lumen-Eager-Loading
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Introduction ##
+Laravel uses Eloquent ORM for database operations.
+One can use DB Raw queries if familiar with.
+If you are working on the small data set, Eloquent ORM is very helpfull tool. Eloquent ORM gives important features which are important for building applications
+> * Readability
+> * Maintainability
 
-## Official Documentation
+Also using an ORM means you are also much more secure by default (you don't need to worry about escaping user input.etc. as it's already taken care of).
+But you should be worrying about performance issues in respect to ORMs if and when you encounter them.
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+By default ORM's `lazy` load data as they don't know your intension of task. Actually Nobody wants to use related models data after quering the model.
 
-## Security Vulnerabilities
+The Eloquent ORM interacts with a database using Active Record implementation.
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+In this project I am digging into eloquent ORM, how it works `eager loading` and `lazy loading` internally.
 
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
